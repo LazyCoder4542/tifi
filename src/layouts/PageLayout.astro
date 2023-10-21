@@ -7,9 +7,11 @@ interface Props {
   titleHeader: string;
   showHeader?: boolean;
   showFooter?: boolean;
+  contact_section_title?: string
+  contact_section_subtitle?: string
 }
 
-const { title, titleHeader, showHeader = true, showFooter = true } = Astro.props;
+const { title, titleHeader, showHeader = true, showFooter = true, contact_section_title, contact_section_subtitle  } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,7 +34,7 @@ const { title, titleHeader, showHeader = true, showFooter = true } = Astro.props
       <div id="container">
         <slot />
       </div>
-      {showFooter && <Footer />}
+      {showFooter && <Footer contact_section_title={contact_section_title} contact_section_subtitle={contact_section_subtitle}/>}
     </main>
   </body>
 </html>
