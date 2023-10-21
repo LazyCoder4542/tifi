@@ -8,6 +8,7 @@ import linear from "../assets/icons/linear.svg?raw"
 import paypal from "../assets/icons/paypal.svg?raw"
 import uber from "../assets/icons/uber.svg?raw"
 import youtube from "../assets/icons/youtube.svg?raw"
+import zoom from "../assets/icons/zoom.svg?raw"
 import tifi from "../assets/icons/tifi.svg?raw"
 import twitter from "../assets/icons/twitter.svg?raw"
 import linkedin from "../assets/icons/linkedin.svg?raw"
@@ -27,7 +28,7 @@ const {contact_section_title, contact_section_subtitle} = Astro.props
   </section>
   <section class="bg-[rgba(255,77,0,0.17)] py-[45px] flex flex-col items-center gap-8">
     <p class="text-[#1D2939] font-medium">Join 4,000+ companies already growing</p>
-    <div class="flex justify-between w-full">
+    <div class="flex justify-between w-full -xl:justify-center -xl:gap-x-[6.19rem] -xl:gap-y-12 -xl:flex-wrap -md:justify-between -md:gap-x-4">
       <SVG raw={airbnb}/>
       <SVG raw={linear}/>
       <SVG raw={paypal}/>
@@ -52,6 +53,7 @@ const {contact_section_title, contact_section_subtitle} = Astro.props
         <SVG raw={twitter} />
         <SVG raw={linkedin} />
         <SVG raw={facebook} />
+        <SVG raw={zoom} />
       </span>
     </div>
   </section>
