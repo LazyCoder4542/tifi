@@ -3,7 +3,7 @@ import DetailCard from "../DetailCard";
 function MansoryGrid({items}: {items: any[]}) {
   return (
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 500: 1, 700: 2 , 1440: 3}}
+        columnsCountBreakPoints={{ 500: 1, 700: 2 , 2000: 3}}
       >
         <Masonry gutter="16px 24px">
           {items.map((item, id) => <DetailCard key={id} item={item}/>)}

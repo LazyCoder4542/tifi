@@ -1,0 +1,53 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Resource from "../components/resources/Resources.astro"
+import SVG from '../components/SVG.astro';
+import link from '../assets/icons/link.svg?raw'
+---
+
+<PageLayout title="Welcome to Astro." titleHeader='Contact' contact_section_subtitle='In just 48 hours, our experts will meticulously assess your video content and reveal untapped opportunities for enhancing your <span class="font-bold">brand</span> and visual storytelling.' contact_section_title='Let’s <span>create</span> something special together.'>
+  <section class="pb-24">
+    <div class="flex flex-col gap-12 justify-center items-center min-h-[60vh] bg-[linear-gradient(180deg,rgba(234,236,240,0.00)_35.1%,#EAECF0_100%)] rounded-2xl">
+      <header class="flex flex-col gap-6">
+        <h1 class="text-[#101828] text-center leading-[normal] text-7xl font-extrabold font-serif [&>span]:text-[#FF601F]">Resources and <span>Insights</span></h1>
+        <p class="text-center text-[#1D2939]">The latest industry news, technologies, and resources. </p>
+      </header>
+      <div>
+        <div>
+          <input type="text">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <!-- <Resource /> -->
+  </section>
+  <section class="bg-[#F2F4F7] gap-12 flex flex-col py-[6.69rem] [&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-[#F4E2DD]">
+    <div class="grid grid-cols-2 gap-[5.25rem] pl-16 pr-4 py-4 rounded-2xl items-center">
+      <div class="flex flex-col gap-8 items-start">
+        <div class="flex flex-col gap-4 w-full">
+          <h2 class="font-bold text-4xl text-[#101828] leading-[3.6rem]">Businesses and Brands</h2>
+          <p>From marketing strategies to the latest industry insights, our resources are designed to be your guiding light in the world of visual storytelling. We're dedicated to helping businesses harness the true potential of video content to connect with their audience, drive conversions, and elevate their brand presence.</p>
+        </div>
+        <button class="btn btn-secondary">
+          <span>VIEW RESOURCES</span>
+          <SVG raw={link} />
+        </button>
+      </div>
+      <img class="w-full h-full object-cover" src="assets/images/Frame_145.png" alt="">
+    </div>
+    <div class="grid grid-cols-2 gap-[5.25rem] pl-16 pr-4 py-4 rounded-2xl items-center">
+      <div class="flex flex-col gap-8 items-start">
+        <div class="flex flex-col gap-4 w-full">
+          <h2 class="font-bold text-4xl text-[#101828] leading-[3.6rem]">Individuals</h2>
+          <p>Whether you're a content creator, a filmmaker, or someone with a passion for video, our resources are designed to be your creative compass. We're here to help you turn your vision into captivating reality, enhancing your storytelling, and making every frame count.</p>
+        </div>
+        <button class="btn btn-secondary">
+          <span>VIEW RESOURCES</span>
+          <SVG raw={link} />
+        </button>
+      </div>
+      <img class="w-full h-full object-cover" src="assets/images/Frame_145.png" alt="">
+    </div>
+  </section>
+</PageLayout>

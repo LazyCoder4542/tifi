@@ -1,0 +1,245 @@
+---
+import { Tabs } from 'astro-tabs';
+//import {TabsDefault} from "../../react/tab.tsx";
+import { motion, AnimatePresence } from "framer-motion"
+interface Props {
+  data?: {
+    name: string
+    data: {
+      title: string
+      desc: string
+      url: string
+      category: string
+    }[]
+  }[]
+  className?: string
+}
+const testData = [
+  {
+    name: "Video Editing Tips",
+    data: [
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Editing"
+      },
+    ]
+  },
+  {
+    name: "Creative Storytelling",
+    data: [
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Creative Storytelling"
+      },
+    ]
+  },
+  {
+    name: "Industry Insights",
+    data: [
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Industry Insights"
+      },
+    ]
+  },
+  {
+    name: "Video Marketing",
+    data: [
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+      {
+        title: "Time lapse and Mapping",
+        desc: "We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.",
+        url: "/assets/images/resource.png",
+        category: "Video Marketing"
+      },
+    ]
+  }
+]
+const { data = testData, className } = Astro.props;
+---
+<div class={`flex flex-col gap-12 items-center ${className && className}`}>
+  <header class="flex flex-col gap-6 items-center">
+  </header>
+  <div class="w-full">
+    <Tabs>
+      {data.map((data, id) => {
+        var str = `panel-${id + 1}`
+        console.log(str);
+        return <Fragment key={id} slot={str}>{data.name}</Fragment>
+      })}
+      <!-- {data.map(({data}, id) => {
+        return (
+          <Fragment slot={`panel-${id + 1}`}>
+            {
+              data.map(resource => <div>{resource.title}</div>)
+            }
+          </Fragment>)
+      })} -->
+    </Tabs>
+    <!-- <TabsDefault client:load /> -->
+  </div>
+</div>
+
+<style is:global>
+  @tailwind components;
+  .tabs > nav {
+    @apply justify-center gap-[40px] border-b border-b-[#D0D5DD]
+  }
+  .tab {
+    @apply pb-2 border-b-4 border-transparent
+
+  }
+  .tab:hover {
+    @apply border-b-[#FF601F88]
+  }
+
+  .tab-selector:checked ~ .tab {
+    @apply border-b-[#FF601F]
+  }
+
+  .panel {
+    @apply py-12
+  }
+  @layer components {
+    .form {
+      @apply font-body max-w-[607px] mx-auto flex flex-col gap-6
+    }
+    .form > div {
+      @apply flex flex-col gap-6
+    }
+    .form > div > div  {
+      @apply flex flex-col gap-1.5
+    }
+    .form > div > div > label {
+      @apply text-[#344054] font-medium text-sm
+    }
+    .form > div > div > input, .form > div > div > textarea {
+      @apply px-3.5 py-4 rounded-lg border border-solid outline-[#FF601F]
+    }
+  }
+</style>
