@@ -12,12 +12,14 @@ import tifi from "../assets/icons/tifi.svg?raw"
 import twitter from "../assets/icons/twitter.svg?raw"
 import linkedin from "../assets/icons/linkedin.svg?raw"
 import facebook from "../assets/icons/facebook.svg?raw"
+
+const {contact_section_title, contact_section_subtitle} = Astro.props
 ---
 <footer id="site-footer">
   <section class="py-24">
     <Contact header={{
-      title: "Let’s <span>create</span> something special together.",
-      subtitle: `In just 48 hours, our experts will meticulously assess your video content and reveal untapped opportunities for enhancing your <span class="font-bold">brand</span> and visual storytelling.`
+      title: contact_section_title,
+      subtitle: contact_section_subtitle
     }}/>
   </section>
   <section class="border-t border-t-[#667085] py-24">
