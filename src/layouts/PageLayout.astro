@@ -29,12 +29,12 @@ const { title, titleHeader, showHeader = true, showFooter = true, contact_sectio
     <ViewTransitions />
   </head>
   <body>
-    <main transition:animate="slide">
-      {showHeader && <Header />}
+    <main transition:animate="slide" class="relative flex flex-col">
+      {showHeader && <Header transition:persist />}
       <div id="container">
         <slot />
       </div>
-      {showFooter && <Footer contact_section_title={contact_section_title} contact_section_subtitle={contact_section_subtitle}/>}
+      {showFooter && <Footer transition:persist contact_section_title={contact_section_title} contact_section_subtitle={contact_section_subtitle}/>}
     </main>
   </body>
 </html>
@@ -61,14 +61,17 @@ const { title, titleHeader, showHeader = true, showFooter = true, contact_sectio
         --page-padding: 1rem
       }
     }
+    #site-header {
+      @apply w-[calc(100%-(2*var(--page-padding)))] mx-auto my-8 border border-[#EAECF0] rounded-3xl
+    }
     body {
       @apply text-[#344054]
     }
-    textarea {
-      @apply resize-none
-    }
     #container, #site-footer {
       @apply flex flex-col [&>section]:px-[var(--page-padding)]
+    }
+    textarea {
+      @apply resize-none
     }
   }
   @layer components {
@@ -76,10 +79,13 @@ const { title, titleHeader, showHeader = true, showFooter = true, contact_sectio
       @apply border-none outline-transparent
     }
     .btn {
-      @apply py-3 px-5 inline-flex border-none items-center justify-center rounded-lg
+      @apply py-3 px-5 inline-flex border-none items-center justify-center rounded-lg gap-3 shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)]
     }
     .btn.btn-primary{
-      @apply bg-[#FF601F] text-white font-extrabold font-button shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)]
+      @apply bg-[#FF601F] text-white font-extrabold font-button
+    }
+    .btn.btn-secondary{
+      @apply text-[#101828] font-extrabold font-button border-solid border border-[#667085]
     }
   }
 </style>
