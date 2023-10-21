@@ -1,22 +1,48 @@
 ---
-import tifi from "../assets/icons/tifi.svg?raw";
-import SVG from "./SVG.astro";
+import logo from "../assets/Tifi.png";
+import menu from "../assets/menu.png";
 ---
 
-<header class="flex justify-between items-center py-6 px-8 rounded-lg shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)]">
+<script>
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+</script>
+
+<header
+  class="bg-white noto flex py-6 px-[22px] lg:rounded-3xl shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)] lg:my-8 lg:w-[80%] mx-auto items-center justify-between"
+>
+  <span>
+    <a href="/"><img src={logo.src} alt="" /></a>
+  </span>
+
   <div>
-    <SVG raw={tifi} />
+    <ul
+      class="hidden lg:flex noto flex-col top-0 left-0 bg-white lg:bg-transparent right-0 absolute lg:relative lg:flex-row text-base text-[#1D2939] items-center gap-8"
+    >
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li>Clients</li>
+      <li>Resources</li>
+      <li class="lg:hidden">
+        <button
+          class="bg-[#FF601F] text-base font-bold py-3 px-5 text-white rounded-lg"
+        >
+          LET'S TALK
+        </button>
+      </li>
+    </ul>
   </div>
-  <div class="menu flex w-auto">
-    <div class=""></div>
-    <div class="w-full">
-      <nav class="inline-flex gap-8">
-        <span><a href="#" class="text-[#1D2939]">About Us</a></span>
-        <span><a href="#" class="text-[#1D2939]">Portfolio</a></span>
-        <span><a href="#" class="text-[#1D2939]">Clients</a></span>
-        <span><a href="#" class="text-[#1D2939]">Resources</a></span>
-      </nav>
-    </div>
+
+  <button
+    class="bg-[#FF601F] hidden lg:block text-base font-bold py-3 px-5 text-white rounded-lg"
+  >
+    LET'S TALK
+  </button>
+
+  <div class="lg:hidden">
+    <img src={menu.src} alt="" />
   </div>
-  <button class="btn btn-primary">LET'S TALK</button>
 </header>
