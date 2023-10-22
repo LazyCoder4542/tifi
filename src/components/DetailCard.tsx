@@ -25,7 +25,7 @@ function DetailCard({item: {title, body}}: props) {
   return (
     <div className={`py-[44.33px] px-8 bg-[#F2F4F7] rounded-lg flex justify-between gap-4 items-center ${!isOpen ? 'items-stretch' : "items-start"}`}>
       <details open ref={ref} style={detailStyle} className="w-full flex flex-col gap-8">
-          <summary onClick={clickDisable} className="list-none flex justify-between font-sans text-[22px] leading-[33px] text-[#1D2939] font-bold">
+          <summary onClick={clickDisable} className="list-none flex justify-between font-sans text-[22px] leading-[33px] text-[#1D2939] font-bold -xl:leading-7">
             {title}
           </summary>
           <AnimatePresence initial={false}>
