@@ -1,23 +1,9 @@
 ---
-import logo from "../assets/Tifi.png";
-import menu from "../assets/menu.png";
+import tifi from "../assets/icons/tifi.svg?raw";
+import SVG from "./SVG.astro";
 ---
 
-<script>
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-  }
-</script>
-
-<header
-  class="bg-white noto flex py-6 px-[22px] lg:rounded-3xl shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)] lg:my-8 lg:w-[80%] mx-auto items-center justify-between"
->
-  <span>
-    <a href="/"><img src={logo.src} alt="" /></a>
-  </span>
-
+<header id="site-header" class="bg-white sticky z-10 flex justify-between items-center py-6 px-8 rounded-lg shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)]">
   <div>
     <ul
       class="hidden lg:flex noto flex-col top-0 left-0 bg-white lg:bg-transparent right-0 absolute lg:relative lg:flex-row text-base text-[#1D2939] items-center gap-8"
@@ -45,4 +31,7 @@ import menu from "../assets/menu.png";
   <div class="lg:hidden">
     <img src={menu.src} alt="" />
   </div>
+  <a href="/contact">
+    <button class="btn btn-primary">LET'S TALK</button>
+  </a>
 </header>
