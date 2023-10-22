@@ -1,9 +1,14 @@
 ---
 import tifi from "../assets/icons/tifi.svg?raw";
 import SVG from "./SVG.astro";
+import hamburger from "../assets/icons/hamburger.svg?raw"
 ---
 
 <header id="site-header" class="bg-white sticky z-10 flex justify-between items-center py-6 px-8 rounded-lg shadow-[0px_14px_16px_0px_rgba(29,41,57,0.05)]">
+  <div>
+    <SVG raw={tifi} />
+  </div>
+
   <div>
     <ul
       class="hidden lg:flex noto flex-col top-0 left-0 bg-white lg:bg-transparent right-0 absolute lg:relative lg:flex-row text-base text-[#1D2939] items-center gap-8"
@@ -22,16 +27,11 @@ import SVG from "./SVG.astro";
     </ul>
   </div>
 
-  <button
-    class="bg-[#FF601F] hidden lg:block text-base font-bold py-3 px-5 text-white rounded-lg"
-  >
-    <a href="/contact">LET'S TALK</a>
-  </button>
 
   <div class="lg:hidden">
-    <img src={menu.src} alt="" />
+    <SVG raw={hamburger} />
   </div>
-  <a href="/contact">
+  <a href="/contact" class="hidden lg:flex">
     <button class="btn btn-primary">LET'S TALK</button>
   </a>
 </header>
